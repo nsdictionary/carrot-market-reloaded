@@ -5,12 +5,10 @@ export default function Home() {
         {["Nico", "Me", "You", "Yourself", ""].map((person, index) => (
           <div
             key={index}
-            className="flex items-center gap-5 border-b-2 pb-5 last:pb-0 last:border-0"
+            className="flex items-center group gap-5 border-b-2 pb-5 last:pb-0 last:border-0"
           >
             <div className="size-10 bg-blue-400 rounded-full" />
-            {/* <div className="w-40 h-2 animate-pulse rounded-full bg-gray-400"></div>
-            <div className="w-20 h-2 animate-pulse rounded-full bg-gray-400"></div> */}
-            <span className="text-lg font-medium empty:w-24 empty:h-5 empty:rounded-full empty:animate-pulse empty:bg-gray-300">
+            <span className="text-lg font-medium empty:w-24 empty:h-5 empty:rounded-full empty:animate-pulse empty:bg-gray-300 group-hover:text-red-500">
               {person}
             </span>
             <div className="size-6 bg-red-500 text-white flex items-center justify-center rounded-full relative">
