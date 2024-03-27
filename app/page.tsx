@@ -17,6 +17,8 @@ export default function Home() {
             </div>
           </div>
         ))}
+        <div className="btn">test button</div>
+        <a href="#">aaa</a>
       </div>
     </main>
   );
