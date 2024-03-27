@@ -19,6 +19,7 @@ export default function Home() {
         ))}
         <div className="btn">test button</div>
         <a href="#">aaa</a>
+        <input type="text" />
       </div>
     </main>
   );
