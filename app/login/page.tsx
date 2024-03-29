@@ -6,8 +6,10 @@ import Link from "next/link";
 export default function LogIn() {
   const handleForm = async (formData: FormData) => {
     "use server";
+    await new Promise((resolve) => setTimeout(resolve, 5000));
+
     console.log(formData.get("email"), formData.get("password"));
-    console.log("i run in the server!!");
+    console.log("logged in!");
   };
   return (
     <div className="flex flex-col gap-10 px-8 py-6">
@@ -30,7 +32,7 @@ export default function LogIn() {
           required
           errors={[]}
         />
-        <FormButton loading={false} text="Log in" />
+        <FormButton text="Log in" />
       </form>
       <SocialLogin />
     </div>
