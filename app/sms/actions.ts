@@ -23,16 +23,10 @@ export async function smsLogIn(prevState: ActionState, formData: FormData) {
 
   if (!prevState.token) {
     const result = phoneSchema.safeParse(phone);
-    if (!result.success) {
-      return {
-        token: false,
-        error: result.error.flatten(),
-      };
-    } else {
-      return {
-        token: true,
-      };
-    }
+    return {
+      token: result.success,
+      error: result.success ? undefined : result.error.flatten(),
+    };
   } else {
     const result = tokenSchema.safeParse(token);
     if (!result.success) {
