@@ -1,8 +1,15 @@
-import { getUser, logout } from "@/lib/session";
-import { notFound } from "next/navigation";
+import { getSession, getUserSession } from "@/lib/session";
+import { notFound, redirect } from "next/navigation";
+
+const logout = async () => {
+  "use server";
+  const session = await getSession();
+  session.destroy();
+  redirect("/");
+};
 
 export default async function Profile() {
-  const user = await getUser();
+  const user = await getUserSession();
   if (!user) {
     notFound();
   }

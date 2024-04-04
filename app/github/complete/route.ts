@@ -1,6 +1,6 @@
 import db from "@/lib/db";
 import { saveLoginSession } from "@/lib/session";
-import { notFound, redirect } from "next/navigation";
+import { redirect } from "next/navigation";
 import { NextRequest } from "next/server";
 import { getAccessToken, getGithubEmail, getGithubProfile } from "./utils";
 

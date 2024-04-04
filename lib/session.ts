@@ -14,7 +14,7 @@ export const getSession = () => {
   });
 };
 
-export const getUser = async () => {
+export const getUserSession = async () => {
   const session = await getSession();
   const user = session.id
     ? await db.user.findUnique({ where: { id: session.id } })
@@ -28,11 +28,4 @@ export const saveLoginSession = async (user: SessionContent) => {
   session.id = user.id;
   await session.save();
   return redirect("/profile");
-};
-
-export const logout = async () => {
-  "use server";
-  const session = await getSession();
-  session.destroy();
-  redirect("/");
 };
