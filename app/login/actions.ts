@@ -62,7 +62,7 @@ export async function login(prevState: any, formData: FormData) {
     );
 
     if (ok) {
-      saveLoginSession({ id: user!.id });
+      await saveLoginSession({ id: user!.id });
     } else {
       return {
         fieldErrors: {
