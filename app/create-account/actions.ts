@@ -9,7 +9,7 @@ import db from "@/lib/db";
 import { z } from "zod";
 import bcrypt from "bcrypt";
 import { redirect } from "next/navigation";
-import getSession from "@/lib/session";
+import { saveLoginSession } from "@/lib/session";
 
 const checkUsername = (username: string) => !username.includes("potato");
 
@@ -54,7 +54,6 @@ const formSchema = z
 
     return z.NEVER;
   })
-
   .superRefine(async ({ email }, ctx) => {
     const user = await db.user.findUnique({
       where: { email },
@@ -103,9 +102,6 @@ export async function createAccount(prevState: any, formData: FormData) {
       },
     });
 
-    const session = await getSession();
-    session.id = user.id;
-    await session.save();
-    redirect("/profile");
+    saveLoginSession({ id: user.id });
   }
 }
