@@ -24,7 +24,7 @@ export default function SMSLogin() {
           <Input
             name="token"
             type="number"
-            placeholder="Verification code"
+            placeholder="Verifjication code"
             required
             min={100000}
             max={999999}
