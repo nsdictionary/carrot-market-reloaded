@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <div className="min-h-screen flex items-center justify-center">
-      <main className="bg-yellow-300 p-8 pt-64 rounded-[32px] max-w-sm">
+      <main className="bg-yellow-300 p-8 pt-64 rounded-[32px] max-w-sm shadow-2xl">
         <h2 className="text-black font-bold text-xl mb-4 border-b border-black pb-2">
           Select Destination
         </h2>
